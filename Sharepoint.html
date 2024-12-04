@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跑馬燈</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #fff;
+    }
+
+    #marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    #marquee-text {
+      display: inline-block;
+      font-size: 24px;
+      color: #000;
+      animation: marquee linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="marquee-container">
+    <span id="marquee-text">這是一段嵌入式跑馬燈文字，可以修改顏色、大小及速度！</span>
+  </div>
+
+  <script>
+    const speed = 10; // 調整速度
+    const textElement = document.getElementById('marquee-text');
+    textElement.style.animationDuration = `${speed}s`;
+    textElement.style.fontSize = '30px';
+    textElement.style.color = 'blue';
+  </script>
+</body>
+</html>
